@@ -6,7 +6,7 @@
 /*   By: rkharif <rkharif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 17:14:46 by rkharif           #+#    #+#             */
-/*   Updated: 2016/02/23 17:18:47 by rkharif          ###   ########.fr       */
+/*   Updated: 2016/03/07 16:48:57 by rkharif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ size_t	ft_strlen(const char *str)
 	size_t	c;
 
 	c = 0;
-	while (str[c++]);
+	while (str[c])
+		c++;
 	return (c);
 }

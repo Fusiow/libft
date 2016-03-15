@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkharif <rkharif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/23 17:19:05 by rkharif           #+#    #+#             */
-/*   Updated: 2016/03/07 16:47:38 by rkharif          ###   ########.fr       */
+/*   Created: 2016/03/15 14:32:13 by rkharif           #+#    #+#             */
+/*   Updated: 2016/03/15 14:33:56 by rkharif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_strclr(char *s)
 {
-	char	*sp1;
-	char	*sp2;
-
-	sp1 = (char *)s1;
-	sp2 = (char *)s2;
-	while (s1 && s2 && *sp1 == *sp2 && n-- > 0)
+	while (*s)
 	{
-		sp1++;
-		sp2++;
+		*s = '\0';
+		s++;
 	}
-	return ((unsigned char)*sp1 - (unsigned char)*sp2);
 }

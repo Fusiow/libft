@@ -6,7 +6,7 @@
 /*   By: rkharif <rkharif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 16:33:04 by rkharif           #+#    #+#             */
-/*   Updated: 2016/02/23 17:00:29 by rkharif          ###   ########.fr       */
+/*   Updated: 2016/03/09 14:19:12 by rkharif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	if (n)
 	{
 		strd = dst;
-		strs = src;
+		strs = (char *)src;
 		while (n-- > 0)
 		{
 			if ((*strd++ = *strs++) == c)

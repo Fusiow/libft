@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkharif <rkharif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/23 17:19:05 by rkharif           #+#    #+#             */
-/*   Updated: 2016/03/07 16:47:38 by rkharif          ###   ########.fr       */
+/*   Created: 2016/03/09 15:36:40 by rkharif           #+#    #+#             */
+/*   Updated: 2016/03/09 16:20:11 by rkharif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strstr(const char *big, const char *little)
 {
-	char	*sp1;
-	char	*sp2;
+	int		i;
+	size_t	len;
+	char	*ptr;
 
-	sp1 = (char *)s1;
-	sp2 = (char *)s2;
-	while (s1 && s2 && *sp1 == *sp2 && n-- > 0)
+	len = ft_strlen(little);
+	i = 0;
+	if (!little)
+		return ((char *)big);
+	while (big[i])
 	{
-		sp1++;
-		sp2++;
+		if (ft_strncmp(big + i, little, len) == 0)
+		{
+			ptr = (char *)big + i;
+			return (ptr);
+		}
+		i++;
 	}
-	return ((unsigned char)*sp1 - (unsigned char)*sp2);
+	return (0);
 }

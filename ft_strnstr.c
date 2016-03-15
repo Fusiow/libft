@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkharif <rkharif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/23 17:19:05 by rkharif           #+#    #+#             */
-/*   Updated: 2016/03/07 16:47:38 by rkharif          ###   ########.fr       */
+/*   Created: 2016/03/09 16:38:42 by rkharif           #+#    #+#             */
+/*   Updated: 2016/03/09 16:49:34 by rkharif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	char	*sp1;
-	char	*sp2;
+	unsigned int	i;
+	unsigned int	j;
 
-	sp1 = (char *)s1;
-	sp2 = (char *)s2;
-	while (s1 && s2 && *sp1 == *sp2 && n-- > 0)
+	i = 0;
+	j = 0;
+	if (!s2)
+		return ((char *)s1);
+	while (s1[i] && s2[j] && i < n)
 	{
-		sp1++;
-		sp2++;
+		if (s1[i] == s2[j])
+		{
+			i++;
+			j++;
+		}
+		else
+		{
+			i++;
+			j = 0;
+		}
 	}
-	return ((unsigned char)*sp1 - (unsigned char)*sp2);
+	if (!s2[j])
+		return ((char *)s1 + i - j);
+	return (0);
 }
