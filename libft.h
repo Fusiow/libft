@@ -6,7 +6,7 @@
 /*   By: rkharif <rkharif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/17 14:13:24 by rkharif           #+#    #+#             */
-/*   Updated: 2016/02/17 14:27:18 by rkharif          ###   ########.fr       */
+/*   Updated: 2016/10/11 13:40:15 by rkharif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int		ft_tolower(int c);
 **WRITING FUNCTION
 */
 void	ft_putchar(char c);
-void	ft_putstr(char *str);
+void	ft_putstr(char const *s);
 void	ft_putendl(char *str);
 void	ft_putnbr(int nb);
 void	ft_putchar_fd(char c, int fd);

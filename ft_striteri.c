@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkharif <rkharif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/15 14:34:10 by rkharif           #+#    #+#             */
-/*   Updated: 2016/10/10 17:14:04 by rkharif          ###   ########.fr       */
+/*   Created: 2016/10/10 17:09:58 by rkharif           #+#    #+#             */
+/*   Updated: 2016/10/10 17:14:56 by rkharif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striter(char *s, void (*f)(char *))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
+	unsigned int	i;
+
+	i = 0;
 	if (s && f)
 	{
-		while (*s)
+		while (s[i])
 		{
-			(*f)(s);
-			s++;
+			(*f)(i, &s[i]);
+				i++;
 		}
 	}
 }
