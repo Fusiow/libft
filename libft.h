@@ -6,7 +6,7 @@
 /*   By: rkharif <rkharif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/17 14:13:24 by rkharif           #+#    #+#             */
-/*   Updated: 2016/10/11 13:40:15 by rkharif          ###   ########.fr       */
+/*   Updated: 2016/10/12 14:36:20 by rkharif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 # include <strings.h>
 # include <stdlib.h>
 
+typedef struct		s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}					t_list;
 /*
 **MEMORY
 */
@@ -66,8 +72,8 @@ int		ft_tolower(int c);
 */
 void	ft_putchar(char c);
 void	ft_putstr(char const *s);
-void	ft_putendl(char *str);
-void	ft_putnbr(int nb);
+void	ft_putendl(char const *s);
+void	ft_putnbr(int n);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char const *s, int fd);
 void	ft_putendl_fd(char const *s, int fd);
