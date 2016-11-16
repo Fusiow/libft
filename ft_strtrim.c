@@ -6,7 +6,7 @@
 /*   By: rkharif <rkharif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/11 13:28:12 by rkharif           #+#    #+#             */
-/*   Updated: 2016/10/11 16:54:38 by rkharif          ###   ########.fr       */
+/*   Updated: 2016/10/17 15:42:34 by rkharif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@ char	*ft_strtrim(char const *s)
 	unsigned int		i;
 	unsigned int		j;
 
+	if (!s || !*s)
+		return ((char *)s);
 	j = ft_strlen(s);
 	i = 0;
-	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
+	while (s[i] && (s[i] == ' ' || s[i] == '\n' || s[i] == '\t'))
 		i++;
-	while (s[j] == ' ' || s[j] == '\n' || s[j] == '\t' || s[j] == '\0')
+	while (j >= i && (s[j] == ' ' || s[j] == '\n' || s[j] == '\t' || s[j] == '\0'))
 		j--;
 	if (i == 0 && j == ft_strlen(s))
 		return ((char *)s);

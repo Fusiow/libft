@@ -6,7 +6,7 @@
 /*   By: rkharif <rkharif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 17:37:37 by rkharif           #+#    #+#             */
-/*   Updated: 2016/03/07 14:47:30 by rkharif          ###   ########.fr       */
+/*   Updated: 2016/11/16 12:36:02 by rkharif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 
 char	*ft_strcpy(char *dst, const char *src)
 {
+	char	*str;
+
+	str = dst;
 	while (src && *src)
-		*dst++ = *src++;
-	*dst = 0;
+		*str++ = *src++;
+	*str = 0;
 	return (dst);
 }

@@ -6,7 +6,7 @@
 /*   By: rkharif <rkharif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/25 04:12:42 by rkharif           #+#    #+#             */
-/*   Updated: 2016/02/17 14:27:49 by rkharif          ###   ########.fr       */
+/*   Updated: 2016/10/17 15:15:54 by rkharif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ void	*ft_memset(void *b, int c, size_t len)
 		*s = (unsigned char)c;
 		s++;
 	}
-	return (s);
+	return (b);
 }

@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_lstpushback.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkharif <rkharif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/09 17:47:40 by rkharif           #+#    #+#             */
-/*   Updated: 2016/10/17 15:10:57 by rkharif          ###   ########.fr       */
+/*   Created: 2016/10/17 18:44:00 by rkharif           #+#    #+#             */
+/*   Updated: 2016/10/17 18:46:15 by rkharif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include	"libft.h"
 
-void	*ft_memalloc(size_t size)
+t_list		*ft_lstpushback(t_list *lst, t_list *elem)
 {
-	void	*mem;
+	t_list	*tmp;
 
-	mem = malloc(size);
-	if (mem == NULL)
-		return (NULL);
-	ft_bzero(mem, size);
-	return (mem);
+	if (!lst)
+		return (elem);
+	tmp = lst;
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = elem;
+	return (lst);
 }

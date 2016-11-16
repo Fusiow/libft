@@ -6,7 +6,7 @@
 /*   By: rkharif <rkharif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/09 17:40:31 by rkharif           #+#    #+#             */
-/*   Updated: 2016/03/09 17:46:07 by rkharif          ###   ########.fr       */
+/*   Updated: 2016/10/19 16:35:30 by rkharif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		ft_atoi(const char *str)
 	while (*str == ' ' || (*str >= 9 && *str <= 13))
 		str++;
 	if (*str == '+')
-		str++;
+		return (0);
 	if (*str == '-' && *str - 1 != '+')
 	{
 		sign = -1;

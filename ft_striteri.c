@@ -6,7 +6,7 @@
 /*   By: rkharif <rkharif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/10 17:09:58 by rkharif           #+#    #+#             */
-/*   Updated: 2016/10/10 17:14:56 by rkharif          ###   ########.fr       */
+/*   Updated: 2016/10/17 13:22:08 by rkharif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		while (s[i])
 		{
 			(*f)(i, &s[i]);
-				i++;
+			i++;
 		}
 	}
 }
